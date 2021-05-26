@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Viagens</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let label of viagens;">
+
+
+    <ion-card-header>
+      <ion-card-subtitle>
+        <ion-label>{{ label.local }}</ion-label>
+      </ion-card-subtitle>
+      <ion-card-title>
+        <ion-label>{{ label.descricao }}</ion-label>
+        <ion-label>{{ label.data }}</ion-label>
+      </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+        <ion-label>
+            <img src="{{ label.imagem }}">
+        </ion-label>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list id="labels-list">
+    <ion-list-header>
+      <ion-label>Local</ion-label>
+      <ion-label>Descrição</ion-label>
+      <ion-label>Data</ion-label>
+      <ion-label>Imagens</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let label of viagens;">
+      <ion-label>{{ label.local }} </ion-label>
+      <br>
+      <ion-label>{{ label.descricao }}</ion-label>
+      <ion-label>{{ label.data }}</ion-label>
+      <ion-label>
+          <img src="{{ label.imagem }}">
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
